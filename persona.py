@@ -1,4 +1,7 @@
-class persona:
+from logger_base import log
+
+class persona:  # Creacion de la clase Persona
+
     def __init__(self, id_persona, nombre, apellido, email):  # Inicializacion de los atributos a recibit
         self.__id_persona = id_persona
         self.__nombre = nombre
@@ -44,5 +47,7 @@ class persona:
     def email(self,email):
         self.__email = email
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # Prueba de nuestra creacion de objeto persona
+    persona1 = persona(1, 'Juan', 'Barreto', 'jb@email.com')
+    log.debug(persona1)
 
