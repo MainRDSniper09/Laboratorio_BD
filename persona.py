@@ -51,5 +51,10 @@ if __name__ == '__main__':  # Prueba de nuestra creacion de objeto persona
     persona1 = Persona(1, 'Juan', 'Barreto', 'jb@email.com')
     log.debug(persona1)  # Manejo del tipo logger
     # Simular un insert
-    persona1 = Persona('Juan','Perez','jperez@email.com')  # Para que no suceda un error de no pasar los datos completos,les asignamos el valor de None a cada uno de nuestros atributos
+    persona1 = Persona(nombre='Juan',apellido='Perez',email='jperez@email.com')  # Para que no suceda un error de no pasar los datos completos,les asignamos el valor de None a cada uno de nuestros atributos
+    # Decimos literalmente el valor del nombre y demas atributos para evitar el error
     log.debug(persona1)
+
+    # Simular un delete
+    persona1 = Persona(id_persona=1)  # Simulamos que id_persona queremos eliminar
+    log.debug(persona1)  # aunque nos muestre todo en None, lo que nos interesa a nosotros es saber que id_persona se esta eliminando

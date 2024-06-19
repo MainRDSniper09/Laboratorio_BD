@@ -11,3 +11,23 @@
             Id Persona: 1, Nombre: Juan
             Apellido: Barreto, Email: jb@email.com 
         
+06:04:50 PM: DEBUG [persona.py:52] 
+            Id Persona: 1, Nombre: Juan
+            Apellido: Barreto, Email: jb@email.com 
+        
+06:04:50 PM: DEBUG [persona.py:56] 
+            Id Persona: None, Nombre: Juan
+            Apellido: Perez, Email: jperez@email.com 
+        
+06:06:26 PM: DEBUG [persona.py:52] 
+            Id Persona: 1, Nombre: Juan
+            Apellido: Barreto, Email: jb@email.com 
+        
+06:06:26 PM: DEBUG [persona.py:56] 
+            Id Persona: None, Nombre: Juan
+            Apellido: Perez, Email: jperez@email.com 
+        
+06:06:26 PM: DEBUG [persona.py:60] 
+            Id Persona: 1, Nombre: None
+            Apellido: None, Email: None 
+        
