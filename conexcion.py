@@ -1,5 +1,6 @@
 from logger_base import log  # Se importa la clase logger_base
 import psycopg2 as db  # Se importa libreria de psycopg2 para manejar la db
+import sys  # importamos la libreria sys para hacer uso de metodo exit() y asi salga del programa
 
 class Conexion:  # Creacion de clase Conexion
     _DATABASE = 'test_db'  # se crean la variables de clase
@@ -23,3 +24,4 @@ class Conexion:  # Creacion de clase Conexion
                 return cls._conexion  # Retornamos el objeto conexion
             except Exception as e:
                 log.debug(f'Ocurrio una excepcion {e}')  # En caso tal de que algo este mal, se imprime el error
+                sys.exit()  # Sale del programa ya que detecto un error
