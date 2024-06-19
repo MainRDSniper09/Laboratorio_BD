@@ -25,3 +25,6 @@ class Conexion:  # Creacion de clase Conexion
             except Exception as e:
                 log.debug(f'Ocurrio una excepcion {e}')  # En caso tal de que algo este mal, se imprime el error
                 sys.exit()  # Sale del programa ya que detecto un error
+        else:
+            return cls._conexion  # Retorna el objeto que existe
+
