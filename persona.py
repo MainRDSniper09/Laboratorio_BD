@@ -57,4 +57,7 @@ if __name__ == '__main__':  # Prueba de nuestra creacion de objeto persona
 
     # Simular un delete
     persona1 = Persona(id_persona=1)  # Simulamos que id_persona queremos eliminar
-    log.debug(persona1)  # aunque nos muestre todo en None, lo que nos interesa a nosotros es saber que id_persona se esta eliminando
+    log.debug(persona1)
+'''
+     aunque nos muestre todo en None, lo que nos interesa a nosotros es saber que id_persona se esta eliminando
+'''
