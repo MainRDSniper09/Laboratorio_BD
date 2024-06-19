@@ -7,3 +7,7 @@
             Id Persona: 1, Nombre: Juan
             Apellido: Barreto, Email: jb@email.com 
         
+06:01:40 PM: DEBUG [persona.py:52] 
+            Id Persona: 1, Nombre: Juan
+            Apellido: Barreto, Email: jb@email.com 
+        

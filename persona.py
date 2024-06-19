@@ -1,8 +1,8 @@
 from logger_base import log
 
-class persona:  # Creacion de la clase Persona
+class Persona:  # Creacion de la clase Persona
 
-    def __init__(self, id_persona, nombre, apellido, email):  # Inicializacion de los atributos a recibit
+    def __init__(self, id_persona = None, nombre = None, apellido = None, email = None):  # Inicializacion de los atributos a recibit
         self.__id_persona = id_persona
         self.__nombre = nombre
         self.__apellido = apellido
@@ -48,6 +48,8 @@ class persona:  # Creacion de la clase Persona
         self.__email = email
 
 if __name__ == '__main__':  # Prueba de nuestra creacion de objeto persona
-    persona1 = persona(1, 'Juan', 'Barreto', 'jb@email.com')
+    persona1 = Persona(1, 'Juan', 'Barreto', 'jb@email.com')
+    log.debug(persona1)  # Manejo del tipo logger
+    # Simular un insert
+    persona1 = Persona('Juan','Perez','jperez@email.com')  # Para que no suceda un error de no pasar los datos completos,les asignamos el valor de None a cada uno de nuestros atributos
     log.debug(persona1)
-
