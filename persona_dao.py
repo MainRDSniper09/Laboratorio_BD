@@ -1,6 +1,6 @@
 from conexion import Conexion
-from persona import Persona
 from logger_base import log
+from persona import Persona
 
 
 class PersonaDAO:  # Se crea la el patron de diseño dao, para la conexion de bases de datos
@@ -75,4 +75,3 @@ if __name__ == '__main__':  # Creamos una prueba y vemos que funcione correctame
         personas = PersonaDAO.seleccionar()  # Creamos el objeto PersonaDAO y mandamos a llamar el metodo seleccionar
         for persona in personas:  # Creamos un for para que itere cada registro dentro de nuestra tabla
             log.debug(persona)  # Imprimimos con un log.debug
-
