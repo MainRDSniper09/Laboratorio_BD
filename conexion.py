@@ -35,7 +35,10 @@ class Conexion:  # Creacion de clase Conexion
         log.info(f'Conexion obtenida del pool {conexion}')
         return conexion
 
-
+    @classmethod  # Metodo de clase en donde regresamos una conexion a nuestro pool de conexiones
+    def liberarConexion(cls, conexion):
+        cls.obtenerPool().putconn()  # Va a regresar el objeto conexion a la pool de conexiones
+        log.info(f'Regresamos la conexion al pool {conexion}')
 
 if __name__ == '__main__':
     conexion1 = Conexion.obtenerConexion()  # Conexion uno
