@@ -26,10 +26,15 @@ class Conexion:  # Creacion de clase Conexion
                 return cls._pool
             except Exception as e:
                 log.error(f'Ocurrio un error al obtener el pool {e}')
+        else:
+            return cls._pool
 
     @classmethod
-    def obtenerConexion(cls):  # Creamos la clase obtener conexion la cual nos permite crear un objeto tipo conexion, el cual hara la respectiva conexion a la BD
-        pass
+    def obtenerConexion(cls):
+        conexion = cls.obtenerPool().getconn()  # Con getconn recuperamos un objeto de conexion
+        log.info(f'Conexion obtenida del pool {conexion}')
+        return conexion
+
 
 
 if __name__ == '__main__':
