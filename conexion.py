@@ -12,7 +12,7 @@ class Conexion:  # Creacion de clase Conexion
     _cursor = None
 
     @classmethod
-    def obtener_conexion(cls):  # Creamos la clase obtener conexion la cual nos permite crear un objeto tipo conexion, el cual hara la respectiva conexion a la BD
+    def obtenerConexion(cls):  # Creamos la clase obtener conexion la cual nos permite crear un objeto tipo conexion, el cual hara la respectiva conexion a la BD
         if cls._conexion is None:  # Validamos si el objeto esta vacio
             try:
                 cls._conexion = db.connect(host=cls._HOST,  # Le asignamos al objeto conexion los parametros para realizar la conexion correctamente
@@ -30,9 +30,9 @@ class Conexion:  # Creacion de clase Conexion
 
     @classmethod
     def obtener_cursor(cls):
-        if  cls._cursor is None:
+        if cls._cursor is None:
             try:
-                cls._cursor = cls.obtener_conexion().cursor()  # Se le asigna el valor de obtener conexion, abriendo el cursor tambien a nuestro objeto cursor
+                cls._cursor = cls.obtenerConexion().cursor()  # Se le asigna el valor de obtener conexion, abriendo el cursor tambien a nuestro objeto cursor
                 log.debug(f'Se abrio correctamente el cursor: {cls._cursor}')  # Se imprime que no hay errores
                 return cls._cursor
             except Exception as e:

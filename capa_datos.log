@@ -60,3 +60,61 @@
             Id Persona: 14, Nombre: Alex
             Apellido: Rojas, Email: Arojas@mail.com 
         
+08:29:10 PM: ERROR [conexion.py:23] Conexion exitosa: <connection object at 0x79b2d5383ec0; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+08:30:55 PM: ERROR [conexion.py:23] Conexion exitosa: <connection object at 0x76de69d9bec0; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+08:33:55 PM: ERROR [conexion.py:23] Conexion exitosa: <connection object at 0x7d827fb83ec0; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+08:36:52 PM: ERROR [conexion.py:23] Conexion exitosa: <connection object at 0x71b64cf5fec0; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+08:38:37 PM: ERROR [conexion.py:23] Conexion exitosa: <connection object at 0x77d388a13ec0; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+08:38:37 PM: DEBUG [persona_dao.py:33] Persona a insertar: 
+            Id Persona: None, Nombre: Pedro
+            Apellido: Perez, Email: pp@email.com 
+        
+08:38:37 PM: DEBUG [persona_dao.py:37] Persona insertada correctamente: 
+            Id Persona: None, Nombre: Pedro
+            Apellido: Perez, Email: pp@email.com 
+        
+08:38:37 PM: DEBUG [persona_dao.py:45] Personas insertadas: 1
+08:38:37 PM: ERROR [conexion.py:39] Ocurrio una exepcion al obtener el cursor: type object 'Conexion' has no attribute 'obtener_conexion'
+08:40:04 PM: ERROR [conexion.py:23] Conexion exitosa: <connection object at 0x7e76abea3ec0; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+08:40:04 PM: DEBUG [persona_dao.py:33] Persona a insertar: 
+            Id Persona: None, Nombre: Jorge
+            Apellido: Vega, Email: jv@email.com 
+        
+08:40:04 PM: DEBUG [persona_dao.py:37] Persona insertada correctamente: 
+            Id Persona: None, Nombre: Jorge
+            Apellido: Vega, Email: jv@email.com 
+        
+08:40:04 PM: DEBUG [persona_dao.py:45] Personas insertadas: 1
+08:40:04 PM: DEBUG [conexion.py:36] Se abrio correctamente el cursor: <cursor object at 0x7e76abf7a890; closed: 0>
+08:40:04 PM: DEBUG [persona_dao.py:50] 
+            Id Persona: 8, Nombre: Juan Perez
+            Apellido: Suarez, Email: jperez@email.com 
+        
+08:40:04 PM: DEBUG [persona_dao.py:50] 
+            Id Persona: 9, Nombre: Angel
+            Apellido: Quintana, Email: aq@email.com 
+        
+08:40:04 PM: DEBUG [persona_dao.py:50] 
+            Id Persona: 11, Nombre: Maria
+            Apellido: Esparza, Email: Mesparza@mail.com 
+        
+08:40:04 PM: DEBUG [persona_dao.py:50] 
+            Id Persona: 12, Nombre: Maria
+            Apellido: Esparza, Email: Mesparza@mail.com 
+        
+08:40:04 PM: DEBUG [persona_dao.py:50] 
+            Id Persona: 13, Nombre: Carlos
+            Apellido: Lara, Email: Clara@mail.com 
+        
+08:40:04 PM: DEBUG [persona_dao.py:50] 
+            Id Persona: 14, Nombre: Alex
+            Apellido: Rojas, Email: Arojas@mail.com 
+        
+08:40:04 PM: DEBUG [persona_dao.py:50] 
+            Id Persona: 15, Nombre: Pedro
+            Apellido: Perez, Email: pp@email.com 
+        
+08:40:04 PM: DEBUG [persona_dao.py:50] 
+            Id Persona: 16, Nombre: Jorge
+            Apellido: Vega, Email: jv@email.com 
+        
