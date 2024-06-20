@@ -38,4 +38,5 @@ class Conexion:  # Creacion de clase Conexion
 
 
 if __name__ == '__main__':
-    pass
+    conexion1 = Conexion.obtenerConexion()  # Conexion uno
+    conexion2 = Conexion.obtenerConexion()  # Conexion dos
