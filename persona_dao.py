@@ -37,6 +37,14 @@ class PersonaDAO:  # Se crea la el patron de diseño dao, para la conexion de ba
                 log.debug(f'Persona insertada correctamente: {persona}')  # Mandamos un mensaje por consola mostrando que la persona ha sido insertada correctamente
                 return cursor.rowcount  # Retornamos la cantidad de personas insertadas a nuestra tabla
 
+    @classmethod  # Creamos el metodo de clase actualizar
+    def actualizar(cls, persona):  # Como parametro tambien recibimos el objeto persona
+        with Conexion.obtenerConexion() as conexion:  # Hacemos uso de with como en el metodo insertar
+            with conexion.obtener_cursor() as cursor:
+                valores = (persona.nombre,persona.apellido,persona.email, persona.id_persona)  # Creamos la tupla de valores ya que se tiene que proporcionar los valores de cada uno de los atributos incluyendo id_persona ya que tenemos que especificar que id es el que vamos a modificar
+                cursor.execute(cls._ACTUALIZAR, valores)  # Hacemos uso de execute para ejecutar el comando SQL y le pasamos la tupla
+                log.debug(f'Persona actualizada: {persona}')  # Mandamos mensaje por consola indicando que persona se va a modificar
+                return cursor.rowcount  # Retornamos la cantidad de registros modificados
 
 if __name__ == '__main__':  # Creamos una prueba y vemos que funcione correctamente
         # Insertar un registro
