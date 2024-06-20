@@ -242,3 +242,41 @@
 11:47:04 AM: DEBUG [cursor_del_pool.py:17] Se ejecuta metodo __exit__
 11:47:04 AM: DEBUG [cursor_del_pool.py:24] Commit de la transaccion
 11:47:04 AM: INFO [conexion.py:41] Regresamos la conexion al pool <connection object at 0x7976527720c0; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+11:59:56 AM: DEBUG [cursor_del_pool.py:10] Inicio metodo with __enter__
+11:59:56 AM: INFO [conexion.py:25] Creacion del pool exitosa <psycopg2.pool.SimpleConnectionPool object at 0x7fd5ae6cd6d0>
+11:59:56 AM: INFO [conexion.py:35] Conexion obtenida del pool <connection object at 0x7fd5aef65440; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+11:59:56 AM: DEBUG [cursor_del_pool.py:17] Se ejecuta metodo __exit__
+11:59:56 AM: DEBUG [cursor_del_pool.py:24] Commit de la transaccion
+11:59:56 AM: INFO [conexion.py:41] Regresamos la conexion al pool <connection object at 0x7fd5aef65440; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+11:59:56 AM: DEBUG [persona_dao.py:74] 
+            Id Persona: 8, Nombre: Juan Perez
+            Apellido: Suarez, Email: jperez@email.com 
+        
+11:59:56 AM: DEBUG [persona_dao.py:74] 
+            Id Persona: 9, Nombre: Angel
+            Apellido: Quintana, Email: aq@email.com 
+        
+11:59:56 AM: DEBUG [persona_dao.py:74] 
+            Id Persona: 11, Nombre: Maria
+            Apellido: Esparza, Email: Mesparza@mail.com 
+        
+11:59:56 AM: DEBUG [persona_dao.py:74] 
+            Id Persona: 13, Nombre: Carlos
+            Apellido: Lara, Email: Clara@mail.com 
+        
+11:59:56 AM: DEBUG [persona_dao.py:74] 
+            Id Persona: 14, Nombre: Alex
+            Apellido: Rojas, Email: Arojas@mail.com 
+        
+11:59:56 AM: DEBUG [persona_dao.py:74] 
+            Id Persona: 15, Nombre: Pedro
+            Apellido: Perez, Email: pp@email.com 
+        
+11:59:56 AM: DEBUG [persona_dao.py:74] 
+            Id Persona: 16, Nombre: Jorge
+            Apellido: Eliecer, Email: Je@email.com 
+        
+11:59:56 AM: DEBUG [persona_dao.py:74] 
+            Id Persona: 17, Nombre: Jorge
+            Apellido: Vega, Email: jv@email.com 
+        
