@@ -37,13 +37,19 @@ class Conexion:  # Creacion de clase Conexion
 
     @classmethod  # Metodo de clase en donde regresamos una conexion a nuestro pool de conexiones
     def liberarConexion(cls, conexion):
-        cls.obtenerPool().putconn()  # Va a regresar el objeto conexion a la pool de conexiones
+        cls.obtenerPool().putconn(conexion)  # Va a regresar el objeto conexion a la pool de conexiones
         log.info(f'Regresamos la conexion al pool {conexion}')
+
+    @classmethod  # Creamos el metodo de clase cerrarConexiones el cual nos permite cerrar todos los objetos de conexion disponibles
+    def cerrarConexiones(cls):
+        cls.obtenerPool().closeall()  # Usando el metodo closeall() cerramos todos nuestros objetos de tipo conexion
 
 if __name__ == '__main__':
     conexion1 = Conexion.obtenerConexion()  # Conexion uno
-    conexion2 = Conexion.obtenerConexion()  # Conexion dos
-    conexion3 = Conexion.obtenerConexion()
-    conexion4 = Conexion.obtenerConexion()
-    conexion5 = Conexion.obtenerConexion()
-    # conexion6 = Conexion.obtenerConexion()  # Podemos ver que al momento de crear una sexta conexion devuelve un error ya que el maximo de conexiones es 6
+    Conexion.liberarConexion(conexion1)  # Libera la conexion 1
+
+    conexion2 = Conexion.obtenerConexion()  # Re asigna la misma direccion de memoria de conexion uno ya que no se esta usando
+    # conexion3 = Conexion.obtenerConexion()
+    # conexion4 = Conexion.obtenerConexion()
+    # conexion5 = Conexion.obtenerConexion()
+    # # conexion6 = Conexion.obtenerConexion()  # Podemos ver que al momento de crear una sexta conexion devuelve un error ya que el maximo de conexiones es 6
