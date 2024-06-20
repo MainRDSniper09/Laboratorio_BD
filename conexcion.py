@@ -9,7 +9,7 @@ class Conexion:  # Creacion de clase Conexion
     _DB_PORT = '5432'
     _HOST = 'localhost'
     _conexion = None
-    _curson = None
+    _cursor = None
 
     @classmethod
     def obtener_conexion(cls):  # Creamos la clase obtener conexion la cual nos permite crear un objeto tipo conexion, el cual hara la respectiva conexion a la BD
@@ -20,7 +20,7 @@ class Conexion:  # Creacion de clase Conexion
                                            password=cls._PASSWORD,
                                            port=cls._DB_PORT,
                                            database=cls._DATABASE)
-                log.debug(f'Conexion exitosa: {cls._conexion}')  # Mandamos a imprimir un mensaje de exito
+                log.error(f'Conexion exitosa: {cls._conexion}')  # Mandamos a imprimir un mensaje de exito
                 return cls._conexion  # Retornamos el objeto conexion
             except Exception as e:
                 log.debug(f'Ocurrio una excepcion {e}')  # En caso tal de que algo este mal, se imprime el error
@@ -28,3 +28,15 @@ class Conexion:  # Creacion de clase Conexion
         else:
             return cls._conexion  # Retorna el objeto que existe
 
+    @classmethod
+    def obtener_cursor(cls):
+        if  cls._cursor is None:
+            try:
+                cls._cursor = cls.obtener_conexion().cursor()  # Se le asigna el valor de obtener conexion, abriendo el cursor tambien a nuestro objeto cursor
+                log.debug(f'Se abrio correctamente el cursor: {cls._cursor}')  # Se imprime que no hay errores
+                return cls._cursor
+            except Exception as e:
+                log.error(f'Ocurrio una exepcion al obtener el cursor: {e}')
+                sys.exit()  # Se cierra el programa inmediatamente despues de comprobar que hay un error
+        else:
+            return cls._cursor
