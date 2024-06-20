@@ -24,3 +24,10 @@ class CursorDelPool:
             log.debug('Commit de la transaccion')
         self._cursor.close()  # Cerramos nuestro cursor para realizar querys
         Conexion.liberarConexion(self._conexion)  # Regresamos nuestra conexion a la pool
+
+
+if __name__ == '__main__':  # Se crea la prueba
+    with CursorDelPool() as cursor:  # Se usa with para usar metodo CursorDelPool y se lo asigna a una variable cursor
+        log.debug(f'Dentro del bloque with')  # Se ejecuta un log cuando entra al bloque with
+        cursor.execute('SELECT * FROM persona')  # Se ejecuta la sentencia select
+        log.debug(cursor.fetchall())  # Recuperamos todos los valores de nuestra tabla

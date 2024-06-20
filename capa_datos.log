@@ -234,3 +234,11 @@
 11:24:03 AM: INFO [conexion.py:35] Conexion obtenida del pool <connection object at 0x7961a16d1300; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
 11:24:03 AM: INFO [conexion.py:41] Regresamos la conexion al pool <connection object at 0x7961a16d1300; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
 11:24:03 AM: INFO [conexion.py:35] Conexion obtenida del pool <connection object at 0x7961a16d1300; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+11:47:04 AM: DEBUG [cursor_del_pool.py:10] Inicio metodo with __enter__
+11:47:04 AM: INFO [conexion.py:25] Creacion del pool exitosa <psycopg2.pool.SimpleConnectionPool object at 0x797652603690>
+11:47:04 AM: INFO [conexion.py:35] Conexion obtenida del pool <connection object at 0x7976527720c0; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+11:47:04 AM: DEBUG [cursor_del_pool.py:30] Dentro del bloque with
+11:47:04 AM: DEBUG [cursor_del_pool.py:32] [(9, 'Angel', 'Quintana', 'aq@email.com'), (11, 'Maria', 'Esparza', 'Mesparza@mail.com'), (13, 'Carlos', 'Lara', 'Clara@mail.com'), (14, 'Alex', 'Rojas', 'Arojas@mail.com'), (8, 'Juan Perez', 'Suarez', 'jperez@email.com'), (15, 'Pedro', 'Perez', 'pp@email.com'), (17, 'Jorge', 'Vega', 'jv@email.com'), (16, 'Jorge', 'Eliecer', 'Je@email.com')]
+11:47:04 AM: DEBUG [cursor_del_pool.py:17] Se ejecuta metodo __exit__
+11:47:04 AM: DEBUG [cursor_del_pool.py:24] Commit de la transaccion
+11:47:04 AM: INFO [conexion.py:41] Regresamos la conexion al pool <connection object at 0x7976527720c0; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
