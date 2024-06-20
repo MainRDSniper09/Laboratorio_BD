@@ -174,3 +174,42 @@
             Id Persona: 17, Nombre: Jorge
             Apellido: Vega, Email: jv@email.com 
         
+09:08:27 PM: ERROR [conexion.py:23] Conexion exitosa: <connection object at 0x7dadded84680; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+09:08:27 PM: DEBUG [persona_dao.py:55] Objeto eliminado: 
+            Id Persona: 12, Nombre: None
+            Apellido: None, Email: None 
+        
+09:08:27 PM: DEBUG [persona_dao.py:72] Personas eliminadas 1
+09:08:27 PM: DEBUG [conexion.py:36] Se abrio correctamente el cursor: <cursor object at 0x7daddf74a5c0; closed: 0>
+09:08:27 PM: DEBUG [persona_dao.py:77] 
+            Id Persona: 8, Nombre: Juan Perez
+            Apellido: Suarez, Email: jperez@email.com 
+        
+09:08:27 PM: DEBUG [persona_dao.py:77] 
+            Id Persona: 9, Nombre: Angel
+            Apellido: Quintana, Email: aq@email.com 
+        
+09:08:27 PM: DEBUG [persona_dao.py:77] 
+            Id Persona: 11, Nombre: Maria
+            Apellido: Esparza, Email: Mesparza@mail.com 
+        
+09:08:27 PM: DEBUG [persona_dao.py:77] 
+            Id Persona: 13, Nombre: Carlos
+            Apellido: Lara, Email: Clara@mail.com 
+        
+09:08:27 PM: DEBUG [persona_dao.py:77] 
+            Id Persona: 14, Nombre: Alex
+            Apellido: Rojas, Email: Arojas@mail.com 
+        
+09:08:27 PM: DEBUG [persona_dao.py:77] 
+            Id Persona: 15, Nombre: Pedro
+            Apellido: Perez, Email: pp@email.com 
+        
+09:08:27 PM: DEBUG [persona_dao.py:77] 
+            Id Persona: 16, Nombre: Jorge
+            Apellido: Eliecer, Email: Je@email.com 
+        
+09:08:27 PM: DEBUG [persona_dao.py:77] 
+            Id Persona: 17, Nombre: Jorge
+            Apellido: Vega, Email: jv@email.com 
+        

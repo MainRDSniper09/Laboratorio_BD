@@ -46,6 +46,15 @@ class PersonaDAO:  # Se crea la el patron de diseño dao, para la conexion de ba
                 log.debug(f'Persona actualizada: {persona}')  # Mandamos mensaje por consola indicando que persona se va a modificar
                 return cursor.rowcount  # Retornamos la cantidad de registros modificados
 
+    @classmethod  # Se crea el metodo de clase eliminar
+    def eliminar(cls,persona):  # En donde nuevamente recibe como parametro el objeto persona
+        with Conexion.obtenerConexion() as conexion:
+            with conexion.cursor() as cursor:  # Hacemos uso de with como lo veminos haciendo
+                valores = (persona.id_persona,)  # Creamos la tupla de valores en donde solo recibimos de parametro id_persona para poder eliminarla
+                cursor.execute(cls._ELIMINAR, valores)  # Hacemos que ejecute el comando SQL y mandamos la tupla
+                log.debug(f'Objeto eliminado: {persona}')  # Creamos el mensaje por consola para que el usuario vea que registro se esta eliminando
+                return cursor.rowcount  # Retornamos la cantidad de registros eliminados
+
 if __name__ == '__main__':  # Creamos una prueba y vemos que funcione correctamente
         # Insertar un registro
         # persona1 = Persona(nombre='Jorge',apellido='Vega',email='jv@email.com')  # Se crea el objeto persona1 en donde recibe los parametros para poder insertarla en la tabla
@@ -53,9 +62,14 @@ if __name__ == '__main__':  # Creamos una prueba y vemos que funcione correctame
         # log.debug(f'Personas insertadas: {personas_insertadas}')  # Finalmente mandamos mensaje por consola mostrando la persona insertada
 
         # Actualizar un registro
-        persona1 = Persona(16,'Jorge','Eliecer','Je@email.com')
-        personas_actualizadas = PersonaDAO.actualizar(persona1)
-        log.debug(f'Personas actualizadas: {personas_actualizadas}')
+        # persona1 = Persona(16,'Jorge','Eliecer','Je@email.com')
+        # personas_actualizadas = PersonaDAO.actualizar(persona1)
+        # log.debug(f'Personas actualizadas: {personas_actualizadas}')
+
+        # Eliminar registro
+        persona1 = Persona(id_persona=12)
+        personas_eliminadas = PersonaDAO.eliminar(persona1)
+        log.debug(f'Personas eliminadas {personas_eliminadas}')
 
         # Seleccionar objetos
         personas = PersonaDAO.seleccionar()  # Creamos el objeto PersonaDAO y mandamos a llamar el metodo seleccionar
