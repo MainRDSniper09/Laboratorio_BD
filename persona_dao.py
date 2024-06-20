@@ -26,6 +26,15 @@ class PersonaDAO:  # Se crea la el patron de diseño dao, para la conexion de ba
                 personas.append(persona) # usamos la operacion de anexar los registros a la lista a una variable llamada personas la cual es una lista
             return personas  # Pedimos que nos retorne esta lista de personas
 
+    @classmethod  # Creamos el metodo insertar en un metodo de clase
+    def insertar(cls,persona):  # Recibimos como parametro el objeto persona
+        with Conexion.obtener_conexion() as conexion:  # Hacemos uso de with para asignarle el metodo Conexion.obtener_conexion a conexion
+            with conexion.obtener_cursor() as cursor:  # Hacemos uso de with para asignarle el metodo obtener_cursor a cursor
+                log.debug(f'Persona a insertar: {persona}')  # Mandamos un mensaje por consola la persona que se va a insertar
+                valores = (persona.nombre, persona.apellido, persona.email)  # Creamos la tupla en donde pasamos los valores del objeto persona, con sus respectivos atributos
+                cursor.execute(cls._INSERTAR, valores)  # Hacemos uso de execute para que ejecute la sentencia SQL y le pasamos la tupla de valores
+                log.debug(f'Persona insertada correctamente: {persona}')  # Mandamos un mensaje por consola mostrando que la persona ha sido insertada correctamente
+                return cursor.rowcount  # Retornamos la cantidad de personas insertadas a nuestra tabla
 if __name__ == '__main__':  # Creamos una prueba y vemos que funcione correctamente
         personas = PersonaDAO.seleccionar()  # Creamos el objeto PersonaDAO y mandamos a llamar el metodo seleccionar
         for persona in personas:  # Creamos un for para que itere cada registro dentro de nuestra tabla
