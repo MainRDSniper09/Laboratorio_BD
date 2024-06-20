@@ -129,3 +129,48 @@
             Apellido: Vega, Email: jv@email.com 
         
 08:46:21 PM: DEBUG [persona_dao.py:44] Personas insertadas: 1
+08:59:48 PM: ERROR [conexion.py:23] Conexion exitosa: <connection object at 0x7804e9d03ec0; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+09:00:16 PM: ERROR [conexion.py:23] Conexion exitosa: <connection object at 0x7fd72e2c3ec0; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+09:00:26 PM: ERROR [conexion.py:23] Conexion exitosa: <connection object at 0x78efd4103ec0; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+09:00:26 PM: DEBUG [persona_dao.py:46] Persona actualizada: 
+            Id Persona: 16, Nombre: Jorge
+            Apellido: Eliecer, Email: Je@email.com 
+        
+09:00:26 PM: DEBUG [persona_dao.py:58] Personas actualizadas: 1
+09:00:26 PM: DEBUG [conexion.py:36] Se abrio correctamente el cursor: <cursor object at 0x78efd3faa5c0; closed: 0>
+09:00:26 PM: DEBUG [persona_dao.py:63] 
+            Id Persona: 8, Nombre: Juan Perez
+            Apellido: Suarez, Email: jperez@email.com 
+        
+09:00:26 PM: DEBUG [persona_dao.py:63] 
+            Id Persona: 9, Nombre: Angel
+            Apellido: Quintana, Email: aq@email.com 
+        
+09:00:26 PM: DEBUG [persona_dao.py:63] 
+            Id Persona: 11, Nombre: Maria
+            Apellido: Esparza, Email: Mesparza@mail.com 
+        
+09:00:26 PM: DEBUG [persona_dao.py:63] 
+            Id Persona: 12, Nombre: Maria
+            Apellido: Esparza, Email: Mesparza@mail.com 
+        
+09:00:26 PM: DEBUG [persona_dao.py:63] 
+            Id Persona: 13, Nombre: Carlos
+            Apellido: Lara, Email: Clara@mail.com 
+        
+09:00:26 PM: DEBUG [persona_dao.py:63] 
+            Id Persona: 14, Nombre: Alex
+            Apellido: Rojas, Email: Arojas@mail.com 
+        
+09:00:26 PM: DEBUG [persona_dao.py:63] 
+            Id Persona: 15, Nombre: Pedro
+            Apellido: Perez, Email: pp@email.com 
+        
+09:00:26 PM: DEBUG [persona_dao.py:63] 
+            Id Persona: 16, Nombre: Jorge
+            Apellido: Eliecer, Email: Je@email.com 
+        
+09:00:26 PM: DEBUG [persona_dao.py:63] 
+            Id Persona: 17, Nombre: Jorge
+            Apellido: Vega, Email: jv@email.com 
+        

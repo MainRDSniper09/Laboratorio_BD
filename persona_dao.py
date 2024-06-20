@@ -40,7 +40,7 @@ class PersonaDAO:  # Se crea la el patron de diseño dao, para la conexion de ba
     @classmethod  # Creamos el metodo de clase actualizar
     def actualizar(cls, persona):  # Como parametro tambien recibimos el objeto persona
         with Conexion.obtenerConexion() as conexion:  # Hacemos uso de with como en el metodo insertar
-            with conexion.obtener_cursor() as cursor:
+            with conexion.cursor() as cursor:
                 valores = (persona.nombre,persona.apellido,persona.email, persona.id_persona)  # Creamos la tupla de valores ya que se tiene que proporcionar los valores de cada uno de los atributos incluyendo id_persona ya que tenemos que especificar que id es el que vamos a modificar
                 cursor.execute(cls._ACTUALIZAR, valores)  # Hacemos uso de execute para ejecutar el comando SQL y le pasamos la tupla
                 log.debug(f'Persona actualizada: {persona}')  # Mandamos mensaje por consola indicando que persona se va a modificar
@@ -48,9 +48,14 @@ class PersonaDAO:  # Se crea la el patron de diseño dao, para la conexion de ba
 
 if __name__ == '__main__':  # Creamos una prueba y vemos que funcione correctamente
         # Insertar un registro
-        persona1 = Persona(nombre='Jorge',apellido='Vega',email='jv@email.com')  # Se crea el objeto persona1 en donde recibe los parametros para poder insertarla en la tabla
-        personas_insertadas = PersonaDAO.insertar(persona1)  # Creamos la variable personas_insertadas para asignarle el metodo insertar y de parametro le pasamos persona1
-        log.debug(f'Personas insertadas: {personas_insertadas}')  # Finalmente mandamos mensaje por consola mostrando la persona insertada
+        # persona1 = Persona(nombre='Jorge',apellido='Vega',email='jv@email.com')  # Se crea el objeto persona1 en donde recibe los parametros para poder insertarla en la tabla
+        # personas_insertadas = PersonaDAO.insertar(persona1)  # Creamos la variable personas_insertadas para asignarle el metodo insertar y de parametro le pasamos persona1
+        # log.debug(f'Personas insertadas: {personas_insertadas}')  # Finalmente mandamos mensaje por consola mostrando la persona insertada
+
+        # Actualizar un registro
+        persona1 = Persona(16,'Jorge','Eliecer','Je@email.com')
+        personas_actualizadas = PersonaDAO.actualizar(persona1)
+        log.debug(f'Personas actualizadas: {personas_actualizadas}')
 
         # Seleccionar objetos
         personas = PersonaDAO.seleccionar()  # Creamos el objeto PersonaDAO y mandamos a llamar el metodo seleccionar
