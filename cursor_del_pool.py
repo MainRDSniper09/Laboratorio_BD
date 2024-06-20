@@ -11,3 +11,16 @@ class CursorDelPool:
         self._conexion = Conexion.obtenerConexion()  # le asignamos a nuestro atributo conexion el metodo de obtener conexion
         self._cursor = self._conexion.cursor()  # luego se le asigna a nuestro atributo cursor, el atributo conexion junto a el metodo cursor
         return self._cursor  # Retornamos nuestro cursor creado
+
+    def __exit__(self, tipo_excepcion, valor_excepcion,
+                 detalle_excepcion):  # Se crea el metodo __exit__ para que en caso tal de si es nulo haga rollback y nos arroje un error
+        log.debug(f'Se ejecuta metodo __exit__')
+        if valor_excepcion:
+            self._conexion.rollback()
+            log.error(
+                f'Ocurrio una excepcion, se hace rollback: {valor_excepcion} {tipo_excepcion} {detalle_excepcion}')
+        else:  # En caso de exito realice un commit
+            self._conexion.commit()
+            log.debug('Commit de la transaccion')
+        self._cursor.close()  # Cerramos nuestro cursor para realizar querys
+        Conexion.liberarConexion(self._conexion)  # Regresamos nuestra conexion a la pool
