@@ -40,3 +40,7 @@ class Conexion:  # Creacion de clase Conexion
 if __name__ == '__main__':
     conexion1 = Conexion.obtenerConexion()  # Conexion uno
     conexion2 = Conexion.obtenerConexion()  # Conexion dos
+    conexion3 = Conexion.obtenerConexion()
+    conexion4 = Conexion.obtenerConexion()
+    conexion5 = Conexion.obtenerConexion()
+    # conexion6 = Conexion.obtenerConexion()  # Podemos ver que al momento de crear una sexta conexion devuelve un error ya que el maximo de conexiones es 6

@@ -216,3 +216,15 @@
 11:09:23 AM: INFO [conexion.py:25] Creacion del pool exitosa <psycopg2.pool.SimpleConnectionPool object at 0x70041d516e50>
 11:09:23 AM: INFO [conexion.py:35] Conexion obtenida del pool <connection object at 0x70041c775080; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
 11:09:23 AM: INFO [conexion.py:35] Conexion obtenida del pool <connection object at 0x70041c3f4040; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+11:11:50 AM: INFO [conexion.py:25] Creacion del pool exitosa <psycopg2.pool.SimpleConnectionPool object at 0x74a3b1f3ba90>
+11:11:50 AM: INFO [conexion.py:35] Conexion obtenida del pool <connection object at 0x74a3b1179080; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+11:11:50 AM: INFO [conexion.py:35] Conexion obtenida del pool <connection object at 0x74a3b0df8040; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+11:11:50 AM: INFO [conexion.py:35] Conexion obtenida del pool <connection object at 0x74a3b0df8180; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+11:11:50 AM: INFO [conexion.py:35] Conexion obtenida del pool <connection object at 0x74a3b0df82c0; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+11:11:50 AM: INFO [conexion.py:35] Conexion obtenida del pool <connection object at 0x74a3b0df8400; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+11:12:07 AM: INFO [conexion.py:25] Creacion del pool exitosa <psycopg2.pool.SimpleConnectionPool object at 0x76ce9f993ad0>
+11:12:07 AM: INFO [conexion.py:35] Conexion obtenida del pool <connection object at 0x76ce9ef79080; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+11:12:07 AM: INFO [conexion.py:35] Conexion obtenida del pool <connection object at 0x76ce9ebf8040; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+11:12:07 AM: INFO [conexion.py:35] Conexion obtenida del pool <connection object at 0x76ce9ebf8180; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+11:12:07 AM: INFO [conexion.py:35] Conexion obtenida del pool <connection object at 0x76ce9ebf82c0; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+11:12:07 AM: INFO [conexion.py:35] Conexion obtenida del pool <connection object at 0x76ce9ebf8400; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
