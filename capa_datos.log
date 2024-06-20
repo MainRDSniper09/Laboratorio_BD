@@ -34,3 +34,29 @@
 07:48:09 PM: ERROR [conexion.py:23] Conexion exitosa: <connection object at 0x74431254fec0; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
 07:50:29 PM: ERROR [conexion.py:23] Conexion exitosa: <connection object at 0x726fa4e1bec0; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
 07:50:29 PM: DEBUG [conexion.py:36] Se abrio correctamente el cursor: <cursor object at 0x726fa4cc25c0; closed: 0>
+08:11:25 PM: ERROR [conexion.py:23] Conexion exitosa: <connection object at 0x7a6bff2fbec0; dsn: 'user=admin password=xxx dbname=test_db host=localhost port=5432', closed: 0>
+08:11:25 PM: DEBUG [conexion.py:36] Se abrio correctamente el cursor: <cursor object at 0x7a6bff3d26b0; closed: 0>
+08:11:25 PM: DEBUG [persona_dao.py:32] 
+            Id Persona: 8, Nombre: Juan Perez
+            Apellido: Suarez, Email: jperez@email.com 
+        
+08:11:25 PM: DEBUG [persona_dao.py:32] 
+            Id Persona: 9, Nombre: Angel
+            Apellido: Quintana, Email: aq@email.com 
+        
+08:11:25 PM: DEBUG [persona_dao.py:32] 
+            Id Persona: 11, Nombre: Maria
+            Apellido: Esparza, Email: Mesparza@mail.com 
+        
+08:11:25 PM: DEBUG [persona_dao.py:32] 
+            Id Persona: 12, Nombre: Maria
+            Apellido: Esparza, Email: Mesparza@mail.com 
+        
+08:11:25 PM: DEBUG [persona_dao.py:32] 
+            Id Persona: 13, Nombre: Carlos
+            Apellido: Lara, Email: Clara@mail.com 
+        
+08:11:25 PM: DEBUG [persona_dao.py:32] 
+            Id Persona: 14, Nombre: Alex
+            Apellido: Rojas, Email: Arojas@mail.com 
+        
