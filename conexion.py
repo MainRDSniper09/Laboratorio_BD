@@ -43,3 +43,4 @@ class Conexion:  # Creacion de clase Conexion
 
 if __name__ == '__main__':
     Conexion.obtener_conexion()  # Prueba de conexion a nuestra db
+    Conexion.obtener_cursor()  # Probramos el cursor
