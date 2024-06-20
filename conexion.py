@@ -40,3 +40,6 @@ class Conexion:  # Creacion de clase Conexion
                 sys.exit()  # Se cierra el programa inmediatamente despues de comprobar que hay un error
         else:
             return cls._cursor
+
+if __name__ == '__main__':
+    Conexion.obtener_conexion()  # Prueba de conexion a nuestra db
