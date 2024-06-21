@@ -1,6 +1,6 @@
-from conexion import Conexion
-from persona import Persona
+from cursor_del_pool import CursorDelPool
 from logger_base import log
+from persona import Persona
 
 
 class PersonaDAO:  # Se crea la el patron de diseño dao, para la conexion de bases de datos
@@ -17,7 +17,7 @@ class PersonaDAO:  # Se crea la el patron de diseño dao, para la conexion de ba
 
     @classmethod  # Creamos el metodo seleccionar en un metodo de clase
     def seleccionar(cls):
-        with Conexion.obtener_cursor() as cursor:  # Hacemos uso del with para no tener que hacer commits y rollback manuales
+        with CursorDelPool() as cursor:  # Usamos el objeto cursor del pool creada anteriormente para simplificar nuestro codigo
             cursor.execute(cls._SELECCIONAR)  # Usamos el metodo de ejecutar y dentro le pasamos el parametro de cls._SELECCIONAR, el cual tiene la sentencia sql
             registros = cursor.fetchall()  # Decimos que recupere todos los elementos de nuestro registro
             personas = []  # Creamos una lista para agregar nuestros registros
@@ -28,19 +28,20 @@ class PersonaDAO:  # Se crea la el patron de diseño dao, para la conexion de ba
 
     @classmethod  # Creamos el metodo insertar en un metodo de clase
     def insertar(cls, persona):  # Recibimos como parametro el objeto persona
-        with Conexion.obtenerConexion() as conexion:  # Hacemos uso de with para asignarle el metodo Conexion.obtener_conexion a conexion
-            with conexion.cursor() as cursor:  # Hacemos uso de with para asignarle el metodo obtener_cursor a cursor
-                log.debug(f'Persona a insertar: {persona}')  # Mandamos un mensaje por consola la persona que se va a insertar
-                valores = (persona.nombre, persona.apellido, persona.email)  # Creamos la tupla en donde pasamos los valores del objeto persona, con sus respectivos atributos
-                cursor.execute(cls._INSERTAR, valores)  # Hacemos uso de execute para que ejecute la sentencia SQL y le pasamos la tupla de valores
-                conexion.commit()
-                log.debug(f'Persona insertada correctamente: {persona}')  # Mandamos un mensaje por consola mostrando que la persona ha sido insertada correctamente
-                return cursor.rowcount  # Retornamos la cantidad de personas insertadas a nuestra tabla
+        with CursorDelPool() as cursor:  # Se usa metodo del pool para crear el objeto cursor
+            log.debug(
+                f'Persona a insertar: {persona}')  # Mandamos un mensaje por consola la persona que se va a insertar
+            valores = (persona.nombre, persona.apellido,
+                       persona.email)  # Creamos la tupla en donde pasamos los valores del objeto persona, con sus respectivos atributos
+            cursor.execute(cls._INSERTAR,
+                           valores)  # Hacemos uso de execute para que ejecute la sentencia SQL y le pasamos la tupla de valores
+            log.debug(
+                f'Persona insertada correctamente: {persona}')  # Mandamos un mensaje por consola mostrando que la persona ha sido insertada correctamente
+            return cursor.rowcount  # Retornamos la cantidad de personas insertadas a nuestra tabla
 
     @classmethod  # Creamos el metodo de clase actualizar
     def actualizar(cls, persona):  # Como parametro tambien recibimos el objeto persona
-        with Conexion.obtenerConexion() as conexion:  # Hacemos uso de with como en el metodo insertar
-            with conexion.cursor() as cursor:
+        with CursorDelPool() as cursor:  # Se usa metodo del pool para crear el objeto cursor
                 valores = (persona.nombre,persona.apellido,persona.email, persona.id_persona)  # Creamos la tupla de valores ya que se tiene que proporcionar los valores de cada uno de los atributos incluyendo id_persona ya que tenemos que especificar que id es el que vamos a modificar
                 cursor.execute(cls._ACTUALIZAR, valores)  # Hacemos uso de execute para ejecutar el comando SQL y le pasamos la tupla
                 log.debug(f'Persona actualizada: {persona}')  # Mandamos mensaje por consola indicando que persona se va a modificar
@@ -48,8 +49,7 @@ class PersonaDAO:  # Se crea la el patron de diseño dao, para la conexion de ba
 
     @classmethod  # Se crea el metodo de clase eliminar
     def eliminar(cls,persona):  # En donde nuevamente recibe como parametro el objeto persona
-        with Conexion.obtenerConexion() as conexion:
-            with conexion.cursor() as cursor:  # Hacemos uso de with como lo veminos haciendo
+        with CursorDelPool() as cursor:  # Se usa metodo del pool para crear el objeto cursor
                 valores = (persona.id_persona,)  # Creamos la tupla de valores en donde solo recibimos de parametro id_persona para poder eliminarla
                 cursor.execute(cls._ELIMINAR, valores)  # Hacemos que ejecute el comando SQL y mandamos la tupla
                 log.debug(f'Objeto eliminado: {persona}')  # Creamos el mensaje por consola para que el usuario vea que registro se esta eliminando
@@ -67,12 +67,11 @@ if __name__ == '__main__':  # Creamos una prueba y vemos que funcione correctame
         # log.debug(f'Personas actualizadas: {personas_actualizadas}')
 
         # Eliminar registro
-        persona1 = Persona(id_persona=12)
-        personas_eliminadas = PersonaDAO.eliminar(persona1)
-        log.debug(f'Personas eliminadas {personas_eliminadas}')
+        # persona1 = Persona(id_persona=12)
+        # personas_eliminadas = PersonaDAO.eliminar(persona1)
+        # log.debug(f'Personas eliminadas {personas_eliminadas}')
 
         # Seleccionar objetos
         personas = PersonaDAO.seleccionar()  # Creamos el objeto PersonaDAO y mandamos a llamar el metodo seleccionar
         for persona in personas:  # Creamos un for para que itere cada registro dentro de nuestra tabla
             log.debug(persona)  # Imprimimos con un log.debug
-
