@@ -1,4 +1,4 @@
-#Proyecto Usando Pool de conexiones 
+# Proyecto Usando Pool de conexiones 
 
 Se modifica el programa anterior, para hacer uso 
 de pool de conexiónes, para de este modo simplificar 
